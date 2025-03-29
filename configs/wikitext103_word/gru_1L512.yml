@@ -1,0 +1,55 @@
+name: gru_1L512_wikitext103_word
+
+dataset:
+    origin: huggingface
+
+    # General
+    name: Salesforce/wikitext
+    version: wikitext-103-raw-v1
+    tokenizer: ./tasks/tokenizers/word_tokenizer
+
+    context_length: 256
+
+    # Miscellaneous
+    cache_dir: ../data
+    text_column: text
+    preprocessing_workers: 16
+    dataloader_workers: 4
+    group_texts: True
+
+    max_train_samples: null
+    generated_val_size: 1000
+
+model:
+    # Architecture
+    architecture: rnn
+    cell_type: gru  # simple, gru
+    hidden_size: 512
+    num_layers: 1
+    skip_connections: True
+    transformer_like: True
+
+    # DFA options
+    use_dfa: False
+    state_transition: null
+    measure: null
+
+training:
+    # General
+    epochs: 5
+    train_batch_size: 128
+    eval_batch_size: 256
+
+    # AdamW optimizer
+    learning_rate: 1e-3
+    weight_decay: 0.0
+    beta1: 0.9
+    beta2: 0.999
+
+    # Scheduler
+    warmup_ratio: 0.1
+    scheduler: cosine
+
+    # Logging
+    log_interval: 100
+    num_evals: 50
