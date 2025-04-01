@@ -17,3 +17,20 @@ Once the experiments are done, run the following command to generate the plots f
 ``` 
 
 Note that you can select which plot to generate by changing the run_folders in the corresponding plot file (ll. 43-47).
+
+
+--- 
+
+To cite, please use:
+
+```
+@misc{caillon2025fasttrainingrecurrentneural,
+      title={Fast Training of Recurrent Neural Networks with Stationary State Feedbacks}, 
+      author={Paul Caillon and Erwan Fagnou and Alexandre Allauzen},
+      year={2025},
+      eprint={2503.23104},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2503.23104}, 
+}
+``` 
